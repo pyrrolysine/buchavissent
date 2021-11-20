@@ -1,0 +1,74 @@
+.leaflet-popup-content {
+	font-size:17px;
+}
+
+td {
+	font-family:"Liberation Sans";
+	font-size:2vh;
+	vertical-align:top;
+}
+
+.title {
+	font-family:Fruktur;
+}
+
+.fixedw {
+	font-family:Monospace;
+}
+
+.halfscreen {
+	width:50vw;
+	padding:min(4vh,4vw);
+}
+
+.header {
+	font-weight:bold;
+	color:#404040;
+}
+
+.item {
+	padding:1vh;
+	min-width:4vw;
+}
+
+li {
+	font-size:1.75vh;
+}
+
+a {
+	font-size:inherit;
+	text-decoration:none;
+	color:#6080C0;
+}
+
+a:hover {
+	//text-decoration:underline;
+	color:#C08060;
+}
+
+.map {
+	min-width:40vw;
+	height:80vh;
+}
+
+.leaflet-control * {
+	font-size:1vh;
+}
+
+.swbutton {
+	padding:1.25vh;
+	background-color:#405070;
+	color:#FFFFFF;
+	font-weight:bold;
+	border-radius:20px;
+}
+
+a.swbutton {
+}
+
+a.swbutton:hover {
+	color:#FFFFFF;
+	background-color:#608090;
+}
+
+
