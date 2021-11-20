@@ -14,13 +14,15 @@ Auctions:
 1. owner closes bid (all bidders are refunded) **or** owner finalizes the auction
 (highest bidder receives the NFT, all other bidders are refunded, NFT owner receives bid amount)
 
+#### TODOs
+
+Emit NFTs for minted metadata.
+
 Page:
 - list highest bidders and highest bids
 - list auctioned NFTs -> allow visitor to bid/buy/trade
 - list all NFTs and owners
 - list all bidders/bids
-
-#### TODOs
 
 Direct sell:
 1. set price
