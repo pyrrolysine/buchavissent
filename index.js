@@ -7,7 +7,7 @@ const README = [
 	"</p>",
 	"<br/>",
 	"<center>",
-		"<a class=\"swbutton\" href=\"https://wallet.elrond.com/hook/login?callbackUrl=https://xn--cds.net/buchavissent/\">Use an Elrond wallet to connect</a>",
+		"<a class=\"swbutton\" href=\"https://devnet-wallet.elrond.com/hook/login?callbackUrl=https://xn--cds.net/buchavissent/\">Use an Elrond wallet to connect</a>",
 		"<br/>",
 		"<br/>",
 		"or click on a token to view details about its owner.",
