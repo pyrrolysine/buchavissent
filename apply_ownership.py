@@ -48,5 +48,13 @@ with open('table.js', mode = 'w', encoding = 'utf-8') as fd:
         fd.write('\t{' + ','.join('"{}": "{}"'.format(k, subst(v)) for k, v in zip(header, line.strip().split())) + '},\n')
     fd.write(']\n\n')
 
+with open('nonces.js', mode = 'w', encoding = 'utf-8') as fd:
+    fd.write('{\n')
+    for n, x_y in enumerate(owned.keys(), start = 1):
+        x, y = x_y
+        fd.write('\t"{}w{}": "{}",\n'.format(x, y, hex(n)[2:].rjust(4, '0')))
+    fd.write('\t"": 0\n')
+    fd.write('}\n\n')
+
 print(len(lines), 'places stored')
 

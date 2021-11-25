@@ -4,7 +4,7 @@
 
 td {
 	font-family:"Liberation Sans";
-	font-size:2vh;
+	font-size:min(2vh,2vw);
 	vertical-align:top;
 }
 
@@ -17,7 +17,7 @@ td {
 }
 
 .halfscreen {
-	width:50vw;
+	width:45vw;
 	padding:min(4vh,4vw);
 }
 

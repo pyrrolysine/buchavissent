@@ -41,6 +41,8 @@ const README = [
 	"<center><img src='flow.svg' style='width:100%;height:auto'></img></center>",
 ]
 
+const TOKEN = ""
+
 const MINTING_CONTRACT = "erd1qqqqqqqqqqqqqpgqupxnqvlve4e7a2as5zt7cr8a2qy7g6f07j5q3fstg6"
 const MINTING_GAS_LIMIT = 20000000
 const MINTING_MIN_VALUE = "250000000000000000" // eGLD-wei
@@ -83,7 +85,14 @@ const ITEM_COLUMNS = [
 	},
 ]
 
+
 document.body.onload = function() {
+
+	STATE.nonces = []
+	fetch((json) => {
+		STATE.nonces = JSON.parse(json)
+	}, "/buchavissent/nonces.js")
+
 	fetch((json) => {
 		PLACES = eval(json)
 		init()
@@ -424,8 +433,33 @@ const mint = (id) => {
 		+ "&"
 		+ "callbackUrl=" + here
 	)
-	// console.log(target)
 	window.location.href = target
 }
 
+const donate = (id) => {
+	const receiver = prompt('Donate ' + STATE.locations[id].name + ' to:')
+	if(receiver.length == 0) return
+	const here = document.location.href
+	fetch((text) => {
+		const target = (
+			"https://devnet-wallet.elrond.com/hook/transaction?"
+			+ "receiver=" + STATE.address
+			+ "&"
+			+ "value=" + "0"
+			+ "&"
+			+ "gasLimit=" + MINTING_GAS_LIMIT
+			+ "&"
+			+ "data=" + (
+				"ESDTNFTTransfer"
+				+ "@" + TOKEN
+				+ "@" + STATE.nonces[id]
+				+ "@" + "01"
+				+ "@" + text /* receiver from bech32 to hex */
+			)
+			+ "&"
+			+ "callbackUrl=" + here
+		)
+		window.location.href = target
+	}, "/buchavissent/debech32.rx?" + STATE.address);
+}
 
