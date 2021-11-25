@@ -2,11 +2,34 @@
 ### Buchavissent: Mint, auction, and trade NFTs on buildings in Bucharest
 
 Mintable tokens correspond to averaged building positions:
+
 OSM -> features -> buildings -> location -> map
 
 NFT states:
 - owned
 - open for trade (swap / auction / direct sell)
+
+#### Roadmap
+
+Interface:
+- [x] Display tokens on map
+- [x] List tokens and their status by owner
+
+Features:
+- [x] Request minting for a token (through `sc-mint`)
+- [ ] Emit NFTs for minted metadata.
+- [ ] Allow owners to send their tokens to others (directly from their wallet)
+- [ ] Implement bids (in any ESDT)
+- [ ] Implement swaps (for any ESDT quantity, including other NFTs)
+
+Statistics and other information:
+- [x] Top minters
+- [ ] List all NFTs and owners
+- [ ] List auctioned NFTs -> allow bid/buy/trade
+- [ ] List all bidders/bids
+
+
+#### Implemented features
 
 Auctions:
 1. set time limit, bid NFT, set minimum price
@@ -14,15 +37,8 @@ Auctions:
 1. owner closes bid (all bidders are refunded) **or** owner finalizes the auction
 (highest bidder receives the NFT, all other bidders are refunded, NFT owner receives bid amount)
 
+
 #### TODOs
-
-Emit NFTs for minted metadata.
-
-Page:
-- list highest bidders and highest bids
-- list auctioned NFTs -> allow visitor to bid/buy/trade
-- list all NFTs and owners
-- list all bidders/bids
 
 Direct sell:
 1. set price
@@ -36,6 +52,6 @@ Swap:
 Fees are gathered by the sell/swap/bid smart contracts.
 Swap fees to be described later.
 
-Smart contract owner(s) can request any fraction of its balance at any time.
+A smart contract's owner can request any fraction of its balance at any time.
 
 
