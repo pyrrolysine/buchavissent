@@ -4,7 +4,7 @@ wait=5
 
 check()
 {
-	./update_minters.sh
+	cd sc-mint; ./list_incr.py; cd ..
 	./update_owners.py
 }
 

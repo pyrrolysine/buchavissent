@@ -91,12 +91,27 @@ document.body.onload = function() {
 	STATE.nonces = []
 	fetch((json) => {
 		STATE.nonces = JSON.parse(json)
-	}, "/buchavissent/nonces.js")
+	}, "/buchavissent/nonces.js?ts=" + Math.random())
 
+	STATE.owner_table = {}
 	fetch((json) => {
-		PLACES = eval(json)
-		init()
-	}, "/buchavissent/table.js")
+		STATE.owner_table = JSON.parse(json)
+
+		fetch((json) => {
+			PLACES = eval(json)
+
+			PLACES.forEach((entry) => {
+				const id = entry['x'] + 'w' + entry['y']
+				if(STATE.owner_table[id])
+				{
+					entry['blockchain_owner'] = STATE.owner_table[id]
+				}
+			})
+
+			init()
+		}, "/buchavissent/table.js?ts=" + Math.random())
+	}, "/buchavissent/owners.js?ts=" + Math.random())
+
 }
 
 const init = () => {

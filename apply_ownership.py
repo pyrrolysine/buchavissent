@@ -16,20 +16,6 @@ with open('owners', mode = 'r') as fd:
 
 print(len(owned), 'owned places')
 
-for i, line in enumerate(lines):
-    try:
-        parts = line.strip().split()
-        x = parts[0]
-        y = parts[1]
-        if (x, y) in owned:
-            lines[i] = line[:line.rfind('--')] + owned[(x, y)] + '\n'
-            print('Owner', owned[(x, y)], 'of', x, y)
-    except:
-        pass
-
-with open('table_owned', mode = 'w', encoding = 'utf-8') as fd:
-    for line in lines:
-        fd.write(line)
 
 SUBST = [
     ('_', ' '),
