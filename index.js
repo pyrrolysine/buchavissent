@@ -41,7 +41,7 @@ const README = [
 	"<center><img src='flow.svg' style='width:100%;height:auto'></img></center>",
 ]
 
-const TOKEN = ""
+const TOKEN = "50555a2d386236396563"
 
 const MINTING_CONTRACT = "erd1qqqqqqqqqqqqqpgqupxnqvlve4e7a2as5zt7cr8a2qy7g6f07j5q3fstg6"
 const MINTING_GAS_LIMIT = 20000000
@@ -460,6 +460,6 @@ const donate = (id) => {
 			+ "callbackUrl=" + here
 		)
 		window.location.href = target
-	}, "/buchavissent/debech32.rx?" + STATE.address);
+	}, "/buchavissent/debech32.rx?" + receiver);
 }
 

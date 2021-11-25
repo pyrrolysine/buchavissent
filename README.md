@@ -17,8 +17,8 @@ Interface:
 
 Features:
 - [x] Request minting for a token (through `sc-mint`)
-- [ ] Emit NFTs for minted metadata.
-- [ ] Allow owners to send their tokens to others (directly from their wallet)
+- [x] Emit NFTs for minted metadata.
+- [x] Allow owners to send their tokens to others (directly from their wallet)
 - [ ] Implement bids (in any ESDT)
 - [ ] Implement swaps (for any ESDT quantity, including other NFTs)
 
