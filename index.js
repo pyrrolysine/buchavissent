@@ -313,7 +313,16 @@ const show_ui = () => {
 }
 
 const chunk_title = () => {
-	return "<center style='font-size:4vh;cursor:hand'>Buchavissent</center>"
+	return (
+		"<center style='font-size:4vh'>"
+		+ "<span style='cursor:hand'>Buchavissent</span>"
+		+ "<span style='position:absolute;left:97%'>"
+		+ "<a href='https://github.com/pyrrolysine/buchavissent'>"
+		+ "<img src='/GitHub-Mark-64px.png' style='height:2vh'></img>"
+		+ "</a>"
+		+ "</span>"
+		+ "</center>"
+	)
 }
 
 const chunk_wallet = () => {
