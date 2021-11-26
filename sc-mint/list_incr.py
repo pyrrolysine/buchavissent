@@ -2,9 +2,13 @@
 
 import os
 
-with open('../minters', mode = 'r') as fd:
-    lines = fd.readlines()
-    latest = sum(1 if ' ' in line else 0 for line in lines)
+try:
+    with open('../minters', mode = 'r') as fd:
+        lines = fd.readlines()
+        latest = sum(1 if ' ' in line else 0 for line in lines)
+except:
+    lines = []
+    latest = 0
 
 with os.popen('./query_count.sh', mode = 'r') as fd: count = int(fd.read().strip())
 print(count, 'NFTs minted to date')
